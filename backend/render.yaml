@@ -1,0 +1,34 @@
+services:
+  - type: web
+    name: zolexora-api
+    env: python
+    region: singapore
+    plan: starter
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: MONGO_URL
+        value: mongodb+srv://zolexora_db_user:84v5gWvmghg3DTxX@cluster0.fvgxdlt.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+      - key: DB_NAME
+        value: zolexora_db
+      - key: JWT_SECRET
+        value: 483612d509a72f3f1e26ef6a82f14fd1f4e8656dd78f5053f9f3490cfd8ad29e32958936f9c0045bfcb4feaa1fb95c03a21d4c4ad07b2754b9c73133cb36b932
+      - key: RESEND_API_KEY
+        value: re_iEzZC571_PsVCjfAc1ekcM8He6PGNHcBt
+      - key: SENDER_EMAIL
+        value: noreply@zolexora.com
+      - key: CORS_ORIGINS
+        value: https://zolexora.com,https://www.zolexora.com,https://seller.zolexora.com,https://admin.zolexora.com
+      - key: BUYER_URL
+        value: https://zolexora.com
+      - key: SELLER_URL
+        value: https://seller.zolexora.com
+      - key: ADMIN_URL
+        value: https://admin.zolexora.com
+      - key: RAZORPAY_KEY_ID
+        value: ""
+      - key: RAZORPAY_KEY_SECRET
+        value: ""
+      - key: RAZORPAY_WEBHOOK_SECRET
+        value: ""
+    healthCheckPath: /api/health

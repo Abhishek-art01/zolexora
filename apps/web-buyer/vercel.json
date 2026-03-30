@@ -1,0 +1,10 @@
+{
+  "framework": "nextjs",
+  "buildCommand": "next build",
+  "outputDirectory": ".next",
+  "installCommand": "pnpm install",
+  "env": {
+    "NEXT_PUBLIC_API_URL": "https://api.zolexora.com/api",
+    "NEXT_PUBLIC_RAZORPAY_KEY": ""
+  }
+}

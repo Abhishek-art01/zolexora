@@ -1,0 +1,15 @@
+{
+  "expo": {
+    "name": "Zolexora",
+    "slug": "zolexora-buyer",
+    "version": "1.0.0",
+    "scheme": "zolexora",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "splash": { "image": "./assets/splash.png", "backgroundColor": "#FFB800" },
+    "ios": { "bundleIdentifier": "com.zolexora.buyer", "supportsTablet": false },
+    "android": { "package": "com.zolexora.buyer", "adaptiveIcon": { "foregroundImage": "./assets/icon.png", "backgroundColor": "#FFB800" } },
+    "plugins": ["expo-router", "expo-secure-store"],
+    "extra": { "apiUrl": "https://api.zolexora.com/api" }
+  }
+}

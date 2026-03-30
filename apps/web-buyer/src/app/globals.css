@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --gold: #FFB800;
+    --ink: #111111;
+    --cream: #FAFAF8;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { color: #111111; }
+}
+
+@layer utilities {
+  .shimmer {
+    background: linear-gradient(90deg, #f0ede8 25%, #fafaf8 50%, #f0ede8 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.6s infinite;
+  }
+  .line-clamp-2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .line-clamp-3 { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  .font-display { font-family: var(--font-syne); }
+}

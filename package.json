@@ -1,0 +1,21 @@
+{
+  "name": "zolexora",
+  "private": true,
+  "scripts": {
+    "dev:buyer":   "turbo run dev --filter=web-buyer",
+    "dev:seller":  "turbo run dev --filter=web-seller",
+    "dev:admin":   "turbo run dev --filter=web-admin",
+    "dev:mbuy":    "turbo run dev --filter=mobile-buyer",
+    "dev:msell":   "turbo run dev --filter=mobile-seller",
+    "dev:backend": "cd backend && uvicorn main:app --reload --port 8000",
+    "build":       "turbo run build",
+    "lint":        "turbo run lint",
+    "type-check":  "turbo run type-check"
+  },
+  "devDependencies": {
+    "turbo": "^2.3.0",
+    "typescript": "^5.4.5"
+  },
+  "packageManager": "pnpm@9.0.0",
+  "engines": { "node": ">=20.0.0", "pnpm": ">=9.0.0" }
+}
