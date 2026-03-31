@@ -177,7 +177,7 @@ export default function OrderTrackingPage() {
                 <ExternalLink size={12} /> Track
               </a>
             )}
-            <button onClick={handleSync} disabled={syncing}
+            <button onClick={handleSync} disabled={syncing} title="Sync tracking information"
               className="h-8 w-8 bg-white/10 hover:bg-white/20 rounded-lg flex items-center justify-center transition-colors">
               <RefreshCw size={13} className={`text-white ${syncing ? "animate-spin" : ""}`} />
             </button>

@@ -74,7 +74,7 @@ export default function Navbar() {
               placeholder="Search for products..."
               className="w-full h-10 pl-4 pr-12 rounded-lg border border-gray-200 bg-gray-50 text-sm focus:outline-none focus:border-gold focus:bg-white transition-all placeholder:text-gray-400"
             />
-            <button type="submit" className="absolute right-0 top-0 h-10 w-10 flex items-center justify-center rounded-r-lg bg-gold hover:bg-gold-dark transition-colors">
+            <button type="submit" title="Search" className="absolute right-0 top-0 h-10 w-10 flex items-center justify-center rounded-r-lg bg-gold hover:bg-gold-dark transition-colors">
               <Search size={16} className="text-ink" />
             </button>
           </form>

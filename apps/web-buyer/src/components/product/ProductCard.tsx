@@ -41,7 +41,7 @@ export default function ProductCard({ product: p, index = 0 }: { product: any; i
               -{discount}%
             </span>
           )}
-          <button onClick={handleAddToCart}
+          <button onClick={handleAddToCart} title="Add to cart"
             className="absolute bottom-2.5 right-2.5 w-8 h-8 bg-white rounded-full shadow-card flex items-center justify-center opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-200 hover:bg-gold">
             <ShoppingCart size={14} className="text-ink" />
           </button>

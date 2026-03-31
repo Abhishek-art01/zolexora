@@ -60,7 +60,7 @@ export default function ProductDetailPage() {
           {product.images?.length > 1 && (
             <div className="flex flex-col gap-2">
               {product.images.map((img: string, i: number) => (
-                <button key={i} onClick={() => setActiveImg(i)}
+                <button key={i} onClick={() => setActiveImg(i)} title={`View image ${i + 1}`}
                   className={`w-14 h-14 rounded-xl overflow-hidden border-2 transition-all ${activeImg === i ? "border-gold" : "border-transparent"}`}>
                   <img src={img} alt="" className="w-full h-full object-cover" />
                 </button>
@@ -127,11 +127,11 @@ export default function ProductDetailPage() {
           <div className="flex items-center gap-4">
             <span className="text-sm font-medium text-gray-600">Quantity:</span>
             <div className="flex items-center border border-gray-200 rounded-xl overflow-hidden">
-              <button onClick={() => setQty(Math.max(1, qty - 1))} className="w-9 h-9 flex items-center justify-center hover:bg-cream transition-colors">
+              <button onClick={() => setQty(Math.max(1, qty - 1))} title="Decrease quantity" className="w-9 h-9 flex items-center justify-center hover:bg-cream transition-colors">
                 <Minus size={14} />
               </button>
               <span className="w-10 text-center text-sm font-semibold">{qty}</span>
-              <button onClick={() => setQty(Math.min(product.stock || 10, qty + 1))} className="w-9 h-9 flex items-center justify-center hover:bg-cream transition-colors">
+              <button onClick={() => setQty(Math.min(product.stock || 10, qty + 1))} title="Increase quantity" className="w-9 h-9 flex items-center justify-center hover:bg-cream transition-colors">
                 <Plus size={14} />
               </button>
             </div>

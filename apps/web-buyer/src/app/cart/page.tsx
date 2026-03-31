@@ -104,15 +104,15 @@ export default function CartPage() {
                     <p className="font-bold text-sm text-ink mt-1">₹{item.product?.price?.toLocaleString("en-IN")}</p>
                   </div>
                   <div className="flex flex-col items-end gap-3">
-                    <button onClick={() => removeItem(item.product_id)} className="text-gray-300 hover:text-red-500 transition-colors">
+                    <button onClick={() => removeItem(item.product_id)} className="text-gray-300 hover:text-red-500 transition-colors" title="Remove item from cart">
                       <Trash2 size={15} />
                     </button>
                     <div className="flex items-center border border-gray-200 rounded-lg overflow-hidden">
-                      <button onClick={() => updateQty(item.product_id, item.quantity - 1)} className="w-7 h-7 flex items-center justify-center hover:bg-cream transition-colors">
+                      <button onClick={() => updateQty(item.product_id, item.quantity - 1)} className="w-7 h-7 flex items-center justify-center hover:bg-cream transition-colors" title="Decrease quantity">
                         <Minus size={12} />
                       </button>
                       <span className="w-7 text-center text-sm font-semibold">{item.quantity}</span>
-                      <button onClick={() => updateQty(item.product_id, item.quantity + 1)} className="w-7 h-7 flex items-center justify-center hover:bg-cream transition-colors">
+                      <button onClick={() => updateQty(item.product_id, item.quantity + 1)} className="w-7 h-7 flex items-center justify-center hover:bg-cream transition-colors" title="Increase quantity">
                         <Plus size={12} />
                       </button>
                     </div>
@@ -134,7 +134,8 @@ export default function CartPage() {
                 </div>
                 <input type="range" min={0} max={maxCoinsForDiscount} step={10} value={coinsToUse}
                   onChange={(e) => setCoinsToUse(Number(e.target.value))}
-                  className="w-full accent-gold" />
+                  className="w-full accent-gold"
+                  title="Select number of coins to use for discount" />
                 <div className="flex justify-between mt-2 text-xs">
                   <span className="text-gray-500">{coinsToUse} coins</span>
                   <span className="font-bold text-green-600">- ₹{coinDiscount.toFixed(0)}</span>

@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, Sparkles, ShieldCheck, Truck } from "lucide-react";
+import "./HeroSection.css";
 
 const SLIDES = [
   { tag: "New Arrivals", title: "Electronics\nReimagined", sub: "Headphones, Watches & More — up to 40% off", cta: "Shop Electronics", href: "/store?category=Electronics", bg: "from-slate-900 to-slate-800", img: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&q=80" },
@@ -15,7 +16,7 @@ export default function HeroSection() {
       {/* Main hero — static first slide for SSR, could be a slider */}
       <div className={`bg-gradient-to-br ${SLIDES[0].bg} relative overflow-hidden min-h-[440px] sm:min-h-[500px]`}>
         {/* Background pattern */}
-        <div className="absolute inset-0 opacity-5" style={{ backgroundImage: "radial-gradient(circle at 1px 1px, white 1px, transparent 0)", backgroundSize: "40px 40px" }} />
+        <div className="absolute inset-0 opacity-5 hero-pattern" />
 
         <div className="max-w-[1400px] mx-auto px-4 md:px-8 py-16 md:py-20 flex items-center gap-12 relative z-10">
           <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}

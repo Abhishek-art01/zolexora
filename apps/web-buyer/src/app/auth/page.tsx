@@ -178,6 +178,7 @@ export default function AuthPage() {
                   <input key={i} id={`otp-${i}`} type="text" inputMode="numeric" maxLength={1} value={digit}
                     onChange={(e) => handleOtpInput(e.target.value, i)}
                     onKeyDown={(e) => handleOtpKey(e, i)}
+                    title={`OTP digit ${i + 1}`}
                     className="w-11 h-13 text-center text-xl font-bold border-2 rounded-xl focus:outline-none focus:border-gold transition-colors bg-gray-50 focus:bg-white" />
                 ))}
               </div>

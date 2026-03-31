@@ -4,7 +4,7 @@ import CategoryGrid from "@/components/product/CategoryGrid";
 import FeaturedProducts from "@/components/product/FeaturedProducts";
 import DealsBanner from "@/components/layout/DealsBanner";
 
-export default function HomePage() {
+export default async function HomePage() {
   return (
     <div className="bg-cream min-h-screen">
       <HeroSection />

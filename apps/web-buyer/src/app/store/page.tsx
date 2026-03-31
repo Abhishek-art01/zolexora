@@ -63,7 +63,7 @@ export default function StorePage() {
         </div>
         <div className="flex items-center gap-2">
           <div className="relative">
-            <select value={sort} onChange={(e) => setSort(e.target.value)}
+            <select value={sort} onChange={(e) => setSort(e.target.value)} aria-label="Sort products"
               className="appearance-none h-9 pl-3 pr-8 rounded-lg border border-gray-200 text-sm bg-white text-ink focus:outline-none focus:border-gold cursor-pointer">
               {SORTS.map((s) => <option key={s.value} value={s.value}>{s.label}</option>)}
             </select>
@@ -92,7 +92,7 @@ export default function StorePage() {
           <span className="text-sm text-gray-500">Searching for:</span>
           <span className="flex items-center gap-1.5 bg-gold/10 text-gold-dark text-sm font-medium px-3 py-1 rounded-full">
             {search}
-            <button onClick={() => { setSearch(""); router.push("/store"); }}>
+            <button onClick={() => { setSearch(""); router.push("/store"); }} aria-label="Clear search" title="Clear search">
               <X size={13} />
             </button>
           </span>

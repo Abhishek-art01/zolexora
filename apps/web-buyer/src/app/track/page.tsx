@@ -199,6 +199,7 @@ export default function TrackOrderPage() {
               <label className="text-xs font-semibold text-gray-500 mb-1.5 block">Select Order</label>
               <select value={selectedOrderId}
                 onChange={e => { setSelectedOrderId(e.target.value); loadShipmentForOrder(e.target.value); }}
+                title="Select an order to track"
                 className="w-full h-11 px-4 rounded-xl border border-gray-200 text-sm focus:outline-none focus:border-gold bg-white">
                 <option value="">— Choose an order —</option>
                 {orders.map(o => (
