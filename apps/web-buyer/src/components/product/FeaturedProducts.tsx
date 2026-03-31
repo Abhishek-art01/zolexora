@@ -3,16 +3,22 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 async function getProducts() {
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+  if (!apiUrl) return [];
+
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/products?limit=20&sort=newest`, {
+    const res = await fetch(`${apiUrl}/products?limit=20&sort=newest`, {
       next: { revalidate: 60 },
+      signal: AbortSignal.timeout(5000),
     });
+
     if (!res.ok) return [];
     return res.json();
   } catch {
     return [];
   }
 }
+
 
 export default async function FeaturedProducts() {
   const products = await getProducts();
