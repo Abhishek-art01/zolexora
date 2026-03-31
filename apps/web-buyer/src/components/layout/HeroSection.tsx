@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, Sparkles, ShieldCheck, Truck } from "lucide-react";
-import "./HeroSection.css";
+
 
 const SLIDES = [
   { tag: "New Arrivals", title: "Electronics\nReimagined", sub: "Headphones, Watches & More — up to 40% off", cta: "Shop Electronics", href: "/store?category=Electronics", bg: "from-slate-900 to-slate-800", img: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&q=80" },
