@@ -51,6 +51,9 @@ export const ordersApi = {
 };
 
 export const coinsApi = {
-  balance: () => api.get("/coins/balance").then((r) => r.data),
-  history: () => api.get("/coins/history").then((r) => r.data),
+  balance:          () => api.get("/coins/balance").then((r) => r.data),
+  history:          () => api.get("/coins/history").then((r) => r.data),
+  myDiscounts:      () => api.get("/coins/discounts").then((r) => r.data),
+  generateDiscount: (coins_to_spend: number, product_id?: string) =>
+    api.post("/coins/generate-discount", { coins_to_spend, product_id }).then((r) => r.data),
 };
