@@ -38,7 +38,7 @@ function LocationModal({ location, onClose, onSave }: { location?: any; onClose:
         className="bg-white rounded-2xl shadow-2xl w-full max-w-xl max-h-[90vh] overflow-y-auto">
         <div className="flex items-center justify-between p-5 border-b border-gray-100">
           <h2 className="font-display text-lg font-bold text-ink">{isEdit ? "Edit Location" : "Add Pickup Location"}</h2>
-          <button onClick={onClose} className="p-1.5 rounded-lg hover:bg-gray-100"><X size={18} /></button>
+          <button onClick={onClose} title="Close" className="p-1.5 rounded-lg hover:bg-gray-100"><X size={18} /></button>
         </div>
         <form onSubmit={handleSubmit} className="p-5 space-y-3">
           <div className="grid grid-cols-2 gap-3">
@@ -159,10 +159,10 @@ export default function ShippingPage() {
                 <p className="text-xs text-ink-muted mt-0.5">{loc.address_line_1}, {loc.city}, {loc.state} — {loc.pincode}</p>
               </div>
               <div className="flex gap-1.5">
-                <button onClick={() => setModal(loc)} className="h-8 w-8 flex items-center justify-center rounded-lg border border-gray-200 hover:bg-gray-50">
+                <button onClick={() => setModal(loc)} title="Edit location" className="h-8 w-8 flex items-center justify-center rounded-lg border border-gray-200 hover:bg-gray-50">
                   <Edit size={13} className="text-ink-muted" />
                 </button>
-                <button onClick={() => handleDelete(loc.id)} className="h-8 w-8 flex items-center justify-center rounded-lg border border-gray-200 hover:bg-red-50 hover:border-red-200">
+                <button onClick={() => handleDelete(loc.id)} title="Delete location" className="h-8 w-8 flex items-center justify-center rounded-lg border border-gray-200 hover:bg-red-50 hover:border-red-200">
                   <Trash2 size={13} className="text-gray-400 hover:text-red-500" />
                 </button>
               </div>

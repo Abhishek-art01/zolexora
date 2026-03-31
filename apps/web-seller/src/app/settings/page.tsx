@@ -56,7 +56,7 @@ export default function SettingsPage() {
             <label className="text-xs font-semibold text-ink-muted mb-1.5 block">Display Name</label>
             <div className="relative">
               <User size={15} className="absolute left-3.5 top-3 text-gray-400" />
-              <input value={name} onChange={e => setName(e.target.value)}
+              <input value={name} onChange={e => setName(e.target.value)} placeholder="Enter your display name"
                 className="w-full h-10 pl-10 pr-4 rounded-xl border border-gray-200 text-sm focus:outline-none focus:border-gold bg-white" />
             </div>
           </div>
@@ -64,7 +64,7 @@ export default function SettingsPage() {
             <label className="text-xs font-semibold text-ink-muted mb-1.5 block">Email</label>
             <div className="relative">
               <Mail size={15} className="absolute left-3.5 top-3 text-gray-400" />
-              <input value={user.email} disabled
+              <input value={user.email} disabled placeholder="Your email address"
                 className="w-full h-10 pl-10 pr-4 rounded-xl border border-gray-100 text-sm bg-gray-50 text-ink-muted cursor-not-allowed" />
             </div>
             <p className="text-[11px] text-gray-400 mt-1">Email cannot be changed</p>

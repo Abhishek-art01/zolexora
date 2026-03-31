@@ -156,7 +156,7 @@ function ShipmentPanel({ order, onRefresh }: { order: any; onRefresh: () => void
                 </p>
               </div>
             ) : (
-              <select value={selectedPickup} onChange={e => setSelectedPickup(e.target.value)}
+              <select value={selectedPickup} onChange={e => setSelectedPickup(e.target.value)} title="Select a pickup location"
                 className="w-full h-10 px-3 rounded-xl border border-gray-200 text-sm focus:outline-none focus:border-gold bg-white">
                 {pickupLocations.map((l: any) => (
                   <option key={l.id} value={l.id}>{l.label} — {l.city} ({l.pincode}){l.is_default ? " ★" : ""}</option>
@@ -177,7 +177,7 @@ function ShipmentPanel({ order, onRefresh }: { order: any; onRefresh: () => void
               ].map(({ k, label }) => (
                 <div key={k}>
                   <label className="text-[10px] text-gray-400 mb-1 block">{label}</label>
-                  <input type="number" step="0.1" value={(pkg as any)[k]}
+                  <input type="number" step="0.1" value={(pkg as any)[k]} title={label}
                     onChange={e => setPkg(p => ({ ...p, [k]: parseFloat(e.target.value) }))}
                     className="w-full h-9 px-2 rounded-lg border border-gray-200 text-sm text-center focus:outline-none focus:border-gold" />
                 </div>
@@ -249,12 +249,12 @@ function ShipmentPanel({ order, onRefresh }: { order: any; onRefresh: () => void
               className="bg-white rounded-2xl shadow-2xl w-full max-w-sm p-6">
               <div className="flex items-center justify-between mb-4">
                 <h3 className="font-bold text-ink">Manual Courier Override</h3>
-                <button onClick={() => setShowOverride(false)}><X size={18} /></button>
+                <button onClick={() => setShowOverride(false)} title="Close modal"><X size={18} /></button>
               </div>
               <div className="space-y-3">
                 <div>
                   <label className="text-xs font-semibold text-ink-muted mb-1 block">Provider</label>
-                  <select value={manualForm.provider} onChange={e => setManualForm(f => ({ ...f, provider: e.target.value }))}
+                  <select value={manualForm.provider} onChange={e => setManualForm(f => ({ ...f, provider: e.target.value }))} title="Select a provider"
                     className="w-full h-10 px-3 rounded-xl border border-gray-200 text-sm focus:outline-none focus:border-gold bg-white">
                     <option value="">Select provider</option>
                     {["delhivery","nimbuspost","shiprocket","dtdc","bluedart","indiapost","pickrr"].map(p => (

@@ -115,6 +115,7 @@ export default function SellerAuthPage() {
                   <input key={i} id={`otp-${i}`} type="text" inputMode="numeric" maxLength={1} value={d}
                     onChange={(e) => handleOtpInput(e.target.value, i)}
                     onKeyDown={(e) => { if (e.key === "Backspace" && !d && i > 0) (document.getElementById(`otp-${i-1}`) as any)?.focus(); }}
+                    title={`OTP digit ${i + 1}`}
                     className="w-11 h-12 text-center text-xl font-bold border-2 rounded-xl focus:outline-none focus:border-gold bg-gray-50" />
                 ))}
               </div>

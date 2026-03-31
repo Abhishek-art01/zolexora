@@ -41,7 +41,7 @@ function ProductModal({ product, onClose, onSave }: { product?: any; onClose: ()
         className="bg-white rounded-2xl shadow-2xl w-full max-w-xl max-h-[90vh] overflow-y-auto">
         <div className="flex items-center justify-between p-5 border-b border-gray-100">
           <h2 className="font-display text-lg font-bold text-ink">{isEdit ? "Edit Product" : "New Product"}</h2>
-          <button onClick={onClose} className="p-1.5 rounded-lg hover:bg-gray-100"><X size={18} /></button>
+          <button onClick={onClose} title="Close" className="p-1.5 rounded-lg hover:bg-gray-100"><X size={18} /></button>
         </div>
         <form onSubmit={handleSubmit} className="p-5 space-y-4">
           <div><label className="text-xs font-semibold text-ink-muted mb-1 block">Product Title *</label>
@@ -62,7 +62,7 @@ function ProductModal({ product, onClose, onSave }: { product?: any; onClose: ()
               <input type="number" min="0" value={form.stock} onChange={set("stock")} placeholder="100" className={inputCls} /></div>
           </div>
           <div><label className="text-xs font-semibold text-ink-muted mb-1 block">Category</label>
-            <select value={form.category} onChange={set("category")} className={inputCls}>
+            <select value={form.category} onChange={set("category")} className={inputCls} title="Product category">
               {CATS.map((c) => <option key={c}>{c}</option>)}
             </select></div>
           <div className="flex gap-3 pt-2">
@@ -123,7 +123,7 @@ export default function ProductsPage() {
 
   return (
     <div className="max-w-6xl mx-auto space-y-6">
-      <input ref={fileRef} type="file" accept="image/*" className="hidden" onChange={handleImageUpload} />
+      <input ref={fileRef} type="file" accept="image/*" className="hidden" onChange={handleImageUpload} title="Upload product image" />
 
       {/* Header */}
       <div className="flex items-center justify-between">
@@ -193,7 +193,7 @@ export default function ProductsPage() {
                       className={`flex-1 h-8 flex items-center justify-center gap-1.5 border rounded-lg text-xs font-semibold transition-colors ${p.is_active ? "border-gray-200 hover:bg-gray-50 text-ink" : "border-green-200 bg-green-50 text-green-700 hover:bg-green-100"}`}>
                       {p.is_active ? <><EyeOff size={12} />Hide</> : <><Eye size={12} />List</>}
                     </button>
-                    <button onClick={() => handleDelete(p.id)}
+                    <button onClick={() => handleDelete(p.id)} title="Delete product"
                       className="w-8 h-8 flex items-center justify-center border border-gray-200 rounded-lg text-xs text-gray-400 hover:text-red-500 hover:border-red-200 hover:bg-red-50 transition-colors">
                       <Trash2 size={12} />
                     </button>

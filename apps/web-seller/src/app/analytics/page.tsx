@@ -7,6 +7,12 @@ import { motion } from "framer-motion";
 
 const COLORS = ["#FFB800", "#111111", "#10B981", "#8B5CF6", "#EF4444"];
 
+// 1. Defined the explicit type to fix the TypeScript build error
+interface CategoryData {
+  name: string;
+  value: number;
+}
+
 export default function AnalyticsPage() {
   const [orders, setOrders] = useState<any[]>([]);
   const [products, setProducts] = useState<any[]>([]);
@@ -44,7 +50,12 @@ export default function AnalyticsPage() {
   const catBreakdown = products.reduce((acc, p) => {
     acc[p.category] = (acc[p.category] || 0) + 1; return acc;
   }, {} as Record<string, number>);
-  const catData = Object.entries(catBreakdown).map(([name, value]) => ({ name, value }));
+  
+  // 2. Applied the type here so TypeScript knows what 'd.value' is
+ const catData: CategoryData[] = Object.entries(catBreakdown).map(([name, value]) => ({ 
+  name, 
+  value: value as number 
+}));
 
   // Top products by orders
   const productSales: Record<string, { title: string; count: number; revenue: number }> = {};
@@ -145,9 +156,10 @@ export default function AnalyticsPage() {
               <div className="flex-1 space-y-2">
                 {catData.map((d, i) => (
                   <div key={d.name} className="flex items-center gap-2">
-                    <div className="w-2.5 h-2.5 rounded-full flex-shrink-0" style={{ background: COLORS[i % COLORS.length] }} />
-                    <span className="text-xs text-ink-muted flex-1">{d.name}</span>
-                    <span className="text-xs font-bold text-ink">{d.value}</span>
+                    <div className="w-2.5 h-2.5 rounded-full flex-shrink-0" style={{ backgroundColor: COLORS[i % COLORS.length] }} />
+                    <span className="text-xs text-ink-muted flex-1">{String(d.name)}</span>
+                    {/* 3. Converted d.value to a String inline to guarantee React Node compatibility */}
+                    <span className="text-xs font-bold text-ink">{String(d.value)}</span>
                   </div>
                 ))}
               </div>

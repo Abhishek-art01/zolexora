@@ -110,7 +110,7 @@ export default function SellerShell({ children }: { children: React.ReactNode })
       <div className="flex-1 flex flex-col min-w-0 overflow-hidden">
         {/* Mobile topbar */}
         <div className="md:hidden flex items-center gap-3 px-4 h-14 bg-white border-b border-gray-100">
-          <button onClick={() => setMobileOpen(true)} className="p-1.5 rounded-lg hover:bg-gray-50">
+          <button onClick={() => setMobileOpen(true)} className="p-1.5 rounded-lg hover:bg-gray-50" aria-label="Open menu">
             <Menu size={20} className="text-ink" />
           </button>
           <span className="font-display font-bold text-ink">Zolexora Seller</span>

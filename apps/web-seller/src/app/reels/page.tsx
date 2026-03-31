@@ -48,7 +48,7 @@ function ReelModal({ onClose, onSave, products }: { onClose: () => void; onSave:
         className="bg-white rounded-2xl shadow-2xl w-full max-w-lg max-h-[90vh] overflow-y-auto">
         <div className="flex items-center justify-between p-5 border-b border-gray-100">
           <h2 className="font-display text-lg font-bold text-ink">Upload Reel</h2>
-          <button onClick={onClose} className="p-1.5 rounded-lg hover:bg-gray-100"><X size={18} /></button>
+          <button onClick={onClose} title="Close" className="p-1.5 rounded-lg hover:bg-gray-100"><X size={18} /></button>
         </div>
 
         {!reel ? (
@@ -78,7 +78,7 @@ function ReelModal({ onClose, onSave, products }: { onClose: () => void; onSave:
             {/* Link product */}
             {products.length > 0 && (
               <div><label className="text-xs font-semibold text-ink-muted mb-1 block">Link to Product (optional)</label>
-                <select value={form.linked_product_id} onChange={set("linked_product_id")} className={inputCls}>
+                <select value={form.linked_product_id} onChange={set("linked_product_id")} className={inputCls} title="Link to Product">
                   <option value="">None</option>
                   {products.map((p) => <option key={p.id} value={p.id}>{p.title}</option>)}
                 </select></div>
@@ -124,7 +124,7 @@ function ReelModal({ onClose, onSave, products }: { onClose: () => void; onSave:
                 </div>
               )}
             </div>
-            <input ref={fileRef} type="file" accept="video/*,image/*" className="hidden" onChange={handleUpload} />
+            <input ref={fileRef} type="file" accept="video/*,image/*" className="hidden" onChange={handleUpload} title="Upload media file" />
             <button onClick={handleDone} className="w-full h-10 bg-ink hover:bg-ink-soft text-white rounded-xl text-sm font-bold transition-colors">
               Done — Publish Reel
             </button>
@@ -201,7 +201,7 @@ export default function ReelsPage() {
                 <div className="flex-1 flex items-center gap-1 text-[10px] text-ink-muted px-2">
                   <Eye size={10} /> {r.views_count}
                 </div>
-                <button onClick={() => handleDelete(r.id)} className="w-7 h-7 flex items-center justify-center rounded-lg text-gray-300 hover:text-red-500 hover:bg-red-50 transition-colors">
+                <button onClick={() => handleDelete(r.id)} title="Delete reel" className="w-7 h-7 flex items-center justify-center rounded-lg text-gray-300 hover:text-red-500 hover:bg-red-50 transition-colors">
                   <Trash2 size={12} />
                 </button>
               </div>
