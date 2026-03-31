@@ -5,7 +5,7 @@ import { useAuthStore } from "@/store";
 import { ordersApi } from "@/lib/api";
 import { Package, Truck, CheckCircle, XCircle, Clock, ChevronDown, ChevronUp } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import Link from "next/link"; 
+import Link from "next/link";
 
 const STATUS_CONFIG: Record<string, { label: string; color: string; icon: any }> = {
   pending:    { label: "Pending",    color: "text-amber-600 bg-amber-50",  icon: Clock },
