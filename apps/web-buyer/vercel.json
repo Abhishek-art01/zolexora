@@ -1,8 +1,8 @@
 {
   "framework": "nextjs",
-  "buildCommand": "next build",
+  "installCommand": "corepack enable && corepack prepare pnpm@9.0.0 --activate && pnpm install --filter web-buyer...",
+  "buildCommand": "pnpm --filter web-buyer build",
   "outputDirectory": ".next",
-  "installCommand": "corepack enable && corepack prepare pnpm@9.0.0 --activate && pnpm install",
   "env": {
     "NEXT_PUBLIC_API_URL": "https://api.zolexora.com/api",
     "NEXT_PUBLIC_RAZORPAY_KEY": ""
