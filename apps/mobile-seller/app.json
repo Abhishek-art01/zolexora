@@ -6,11 +6,32 @@
     "scheme": "zolexoraseller",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "splash": { "backgroundColor": "#111111" },
-    "ios": { "bundleIdentifier": "com.zolexora.seller" },
-    "android": { "package": "com.zolexora.seller" },
-    "plugins": ["expo-router", "expo-secure-store", "expo-image-picker"],
-    "extra": { "apiUrl": "https://api.zolexora.com/api" },
+    "splash": {
+      "backgroundColor": "#111111"
+    },
+    "ios": {
+      "bundleIdentifier": "com.zolexora.seller"
+    },
+    "android": {
+      "package": "com.zolexora.seller",
+      "permissions": [
+        "android.permission.RECORD_AUDIO"
+      ]
+    },
+    "plugins": [
+      "expo-router",
+      "expo-secure-store",
+      "expo-image-picker"
+    ],
+    "extra": {
+      "apiUrl": "https://api.zolexora.com/api",
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "4a431ad4-a158-4958-9f7f-3073c41e43f6"
+      }
+    },
     "expo-constants": "~17.0.0"
   }
 }
